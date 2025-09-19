@@ -60,6 +60,8 @@ python -m venv venv
 
 source venv/bin/activate
 
+
+
 Шаг 3: Установка зависимостей
 
 pip install -r requirements.txt

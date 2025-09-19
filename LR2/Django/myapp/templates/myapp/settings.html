@@ -1,0 +1,30 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="settings-container">
+    <h2>⚙️ Настройки платформы</h2>
+    
+    <form method="post" class="settings-form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="theme">🎨 Тема оформления:</label>
+            <select name="theme" id="theme" class="form-control">
+                <option value="light" {% if theme == 'light' %}selected{% endif %}>☀️ Светлая</option>
+                <option value="dark" {% if theme == 'dark' %}selected{% endif %}>🌙 Темная</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="language">🌐 Язык интерфейса:</label>
+            <select name="language" id="language" class="form-control">
+                <option value="ru" {% if language == 'ru' %}selected{% endif %}>🇷🇺 Русский</option>
+                <option value="en" {% if language == 'en' %}selected{% endif %}>🇺🇸 English</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">💾 Сохранить настройки</button>
+        <a href="{% url 'index' %}" class="btn btn-secondary">← Назад к курсам</a>
+    </form>
+</div>
+{% endblock %}

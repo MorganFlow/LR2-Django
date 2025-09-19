@@ -1,0 +1,28 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<section class="hero">
+    <h2>Добро пожаловать на TriaSOLT!</h2>
+    <p>Платформа для качественного онлайн-образования</p>
+</section>
+
+<section class="courses-section">
+    <h2>Наши курсы</h2>
+    <div class="courses-grid">
+        {% for course in courses %}
+        <div class="course-card">
+            <img src="/static/images/{{ course.image }}" alt="{{ course.title }}">
+            <div class="course-content">
+                <h3>{{ course.title }}</h3>
+                <p class="instructor">Автор: {{ course.instructor }}</p>
+                <p class="description">{{ course.description }}</p>
+                <p class="date">Дата публикации: {{ course.date }}</p>
+                <div class="course-meta">
+                    <span>⏱️ {{ course.duration }} часов</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

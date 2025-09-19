@@ -16,3 +16,6 @@ def password_view(request):
     else:
         form = PasswordForm()
     return render(request, 'myapp/password_form.html', {'form': form})
+
+def course(request):
+    Course_sourse = [{"Название" : "Математика в ИТ", "Дата публикации" : "13.12.2013"}]

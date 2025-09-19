@@ -2,29 +2,29 @@
 
 {% block content %}
 <div class="settings-container">
-    <h2>⚙️ Настройки платформы</h2>
+    <h2>⚙️ {% if language == 'en' %}Platform settings{% else %}Настройки платформы{% endif %}</h2>
     
     <form method="post" class="settings-form">
         {% csrf_token %}
         
         <div class="form-group">
-            <label for="theme">🎨 Тема оформления:</label>
+            <label for="theme">🎨 {% if language == 'en' %}Theme:{% else %}Тема оформления:{% endif %}</label>
             <select name="theme" id="theme" class="form-control">
-                <option value="light" {% if theme == 'light' %}selected{% endif %}>☀️ Светлая</option>
-                <option value="dark" {% if theme == 'dark' %}selected{% endif %}>🌙 Темная</option>
+                <option value="light" {% if theme == 'light' %}selected{% endif %}>☀️ {% if language == 'en' %}Light{% else %}Светлая{% endif %}</option>
+                <option value="dark" {% if theme == 'dark' %}selected{% endif %}>🌙 {% if language == 'en' %}Dark{% else %}Темная{% endif %}</option>
             </select>
         </div>
         
         <div class="form-group">
-            <label for="language">🌐 Язык интерфейса:</label>
+            <label for="language">🌐 {% if language == 'en' %}Interface language:{% else %}Язык интерфейса:{% endif %}</label>
             <select name="language" id="language" class="form-control">
-                <option value="ru" {% if language == 'ru' %}selected{% endif %}>🇷🇺 Русский</option>
+                <option value="ru" {% if language == 'ru' %}selected{% endif %}>🇷🇺 {% if language == 'en' %}Russian{% else %}Русский{% endif %}</option>
                 <option value="en" {% if language == 'en' %}selected{% endif %}>🇺🇸 English</option>
             </select>
         </div>
         
-        <button type="submit" class="btn btn-primary">💾 Сохранить настройки</button>
-        <a href="{% url 'index' %}" class="btn btn-secondary">← Назад к курсам</a>
+        <button type="submit" class="btn btn-primary">💾 {% if language == 'en' %}Save settings{% else %}Сохранить настройки{% endif %}</button>
+        <a href="{% url 'index' %}" class="btn btn-secondary">← {% if language == 'en' %}Back to courses{% else %}Назад к курсам{% endif %}</a>
     </form>
 </div>
 {% endblock %}

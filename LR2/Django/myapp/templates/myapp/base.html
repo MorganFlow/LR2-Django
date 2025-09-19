@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ language }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}LearnHub - Онлайн-курсы{% endblock %}</title>
+    <title>{% block title %}{% if language == 'en' %}LearnHub - Online Courses{% else %}LearnHub - Онлайн-курсы{% endif %}{% endblock %}</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body class="{{ theme }}">
@@ -13,8 +13,8 @@
                 <h1>🎓 TriaSOLT</h1>
             </div>
             <div class="nav-links">
-                <a href="{% url 'index' %}">Все курсы</a>
-                <a href="{% url 'settings' %}">Настройки</a>
+                <a href="{% url 'index' %}">{% if language == 'en' %}All courses{% else %}Все курсы{% endif %}</a>
+                <a href="{% url 'settings' %}">{% if language == 'en' %}Settings{% else %}Настройки{% endif %}</a>
             </div>
         </nav>
     </header>
@@ -24,7 +24,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 TriaSOLT. Образовательная платформа</p>
+        <p>&copy; 2025 TriaSOLT. {% if language == 'en' %}Educational platform{% else %}Образовательная платформа{% endif %}</p>
     </footer>
 </body>
 </html>

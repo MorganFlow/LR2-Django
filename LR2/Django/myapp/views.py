@@ -84,8 +84,8 @@ def index(request):
 
     context = {
         'courses' : Course_data,
-        'user_theme' : theme,
-        'user_language' : language,
+        'theme' : theme,
+        'language' : language,
     }
     return render(request, 'myapp/index.html', context)
 

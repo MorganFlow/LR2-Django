@@ -1,24 +1,24 @@
 {% extends 'myapp/base.html' %}
 
 {% block content %}
-<section class="hero">
-    <h2>Добро пожаловать на TriaSOLT!</h2>
-    <p>Платформа для качественного онлайн-образования</p>
+<section class="welcome">
+    <h2>{% if language == 'en' %}Welcome to TriaSOLT!{% else %}Добро пожаловать на TriaSOLT!{% endif %}</h2>
+    <p>{% if language == 'en' %}Platform for quality online education{% else %}Платформа для качественного онлайн-образования{% endif %}</p>
 </section>
 
 <section class="courses-section">
-    <h2>Наши курсы</h2>
+    <h2>{% if language == 'en' %}Our courses{% else %}Наши курсы{% endif %}</h2>
     <div class="courses-grid">
         {% for course in courses %}
         <div class="course-card">
             <img src="/static/images/{{ course.image }}" alt="{{ course.title }}">
             <div class="course-content">
                 <h3>{{ course.title }}</h3>
-                <p class="instructor">Автор: {{ course.instructor }}</p>
+                <p class="instructor">{% if language == 'en' %}Author:{% else %}Автор:{% endif %} {{ course.instructor }}</p>
                 <p class="description">{{ course.description }}</p>
-                <p class="date">Дата публикации: {{ course.date }}</p>
+                <p class="date">{% if language == 'en' %}Publication date:{% else %}Дата публикации:{% endif %} {{ course.date }}</p>
                 <div class="course-meta">
-                    <span>⏱️ {{ course.duration }} часов</span>
+                    <span>⏱️ {{ course.duration }} {% if language == 'en' %}hours{% else %}часов{% endif %}</span>
                 </div>
             </div>
         </div>

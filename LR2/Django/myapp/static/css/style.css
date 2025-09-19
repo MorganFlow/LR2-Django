@@ -1,8 +1,10 @@
 /* Основные переменные */
 :root {
+    --h-f-color: #5a80b9;
     --primary-color: #4a6fa5;
     --secondary-color: #166088;
     --accent-color: #4cb5f5;
+    --author-color: #2c5282;
     --text-color: #333;
     --bg-color: #fff;
     --card-bg: #f8f9fa;
@@ -11,6 +13,9 @@
 }
 
 .dark {
+    --h-f-color: #3a5e94;
+    --primary-color: #9ab8e6;
+    --author-color: #90cdf4;
     --text-color: #f8f9fa;
     --bg-color: #212529;
     --card-bg: #343a40;
@@ -45,7 +50,7 @@ body {
 
 /* Навигация */
 nav {
-    background: var(--primary-color);
+    background: var(--h-f-color);
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -139,7 +144,7 @@ nav {
 }
 
 .instructor {
-    color: var(--secondary-color);
+    color: var(--author-color);
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
@@ -234,7 +239,7 @@ nav {
 
 /* Футер */
 footer {
-    background: var(--primary-color);
+    background: var(--h-f-color);
     color: white;
     text-align: center;
     padding: 2rem;
